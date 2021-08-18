@@ -1,14 +1,24 @@
+@font-face {
+  font-family: "Bebas Neue";
+  src: local("BebasNeueRegular"),
+    url("../fonts/BebasNeueRegular.woff2") format("woff2"),
+    url("../fonts/BebasNeueRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
-body{
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
 }
-.header{
+.header {
   background-color: #635854;
   padding-top: 12px;
   padding-bottom: 12px;
-  border-bottom: 4px solid #3596F5;
+  border-bottom: 4px solid #3596f5;
 }
 .navbar {
   max-width: 1280px;
@@ -17,35 +27,90 @@ body{
   justify-content: space-between; /*   Расставили элементы по краям */
   align-items: center;
 }
-.navbar-menu{
+.navbar-menu {
   margin: 0; /* Отключаем внешние отступы */
   padding: 0; /* Отключаем внутренние отступы */
   list-style: none; /* Отключаем точки */
   display: flex; /* Сделали блок гибким */
   text-align: center;
 }
-.navbar-item{
+.navbar-item {
   margin-left: 40px;
   margin-right: 40px;
 }
-.navbar-link{
+.navbar-link {
   text-decoration: none;
   color: #fff;
 }
-.navbar-contacts{
+.navbar-contacts {
   text-align: right;
 }
-.navbar-text{
+.navbar-text {
   display: block;
   color: #fff;
   margin-bottom: 4px;
   font-size: 14px;
-line-height: 16px;
+  line-height: 16px;
 }
-.navbar-phone{
+.navbar-phone {
   font-weight: 700;
   font-size: 17px;
   line-height: 20px;
   text-decoration: none;
   color: #fff;
+}
+.main {
+  max-width: 1280px;
+  margin: auto;
+  padding-top: 54px;
+  display: flex;
+}
+.main-info {
+  flex-grow: 1; /* Занимает всё место */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Выравнивает в колонку */
+  align-items: center; /* Выравнивает по центру */
+  justify-content: space-between; /* Разбрасываем элементы по краям */
+}
+.home-image path {
+  opacity: 0;
+  cursor: pointer;
+}
+.home-image path:hover {
+  opacity: 1;
+}
+.counter-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.counter-button {
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+}
+.counter-arrow-down {
+  transform: rotateX(180deg);
+}
+.main-title {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: normal;
+  font-size: 37px;
+  line-height: 37px;
+  color: #635854;
+}
+.counter {
+  font-family: "Bebas Neue", sans-serif;
+  color: #635854;
+  font-size: 124px;
+}
+.buttom-primary {
+  background: #3596f5;
+  border-radius: 6px;
+  color: #fff;
+  border: none;
+  padding: 16px 36px;
+  cursor: pointer;
 }
