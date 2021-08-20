@@ -3,6 +3,9 @@ $(document).ready(function () {
   var floorPath = $(".home-image path"); // этаж в SVG
   var counterUp = $(".counter-up"); // кнопка вверх
   var counterDown = $(".counter-down"); // кнопка вниз
+  var modal = $('.modal');
+  var modalCloseButton = $('.modal-close-button');
+  var viewFlatsButton = $('.view-flats');
 
   // управление мышью
   $(".home-image path").on('mouseover', function () {
@@ -10,6 +13,11 @@ $(document).ready(function () {
     currentFloor = $(this).attr('data-floor');
     $(".counter").text(currentFloor);
   });
+
+  floorPath.on('click', toggleModal); 
+  /* вкл/выкл окна квартиры */
+  modalCloseButton.on("click", toggleModal);
+  viewFlatsButton.on("click", toggleModal);
 
   // стрелка вверх
   counterUp.on("click", function () {
@@ -32,4 +40,9 @@ $(document).ready(function () {
       $(`[data-floor=${usCurrentFloor}]`).toggleClass("current-floor");
     }
   })
+
+  function toggleModal() {   // функция открыть/закрыть
+    modal.toggleClass("is-open");
+  }
+
 });
